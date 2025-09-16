@@ -15,7 +15,8 @@
         <div class="container">
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <img src="./assests/Logotipo.jpeg" alt="Logo" width="40" height="50" class="d-inline-block align-text-top">
+                <img src="./css/assests/Logotipo.jpeg" alt="Logo" width="40" height="50"
+                    class="d-inline-block align-text-top">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
@@ -38,26 +39,143 @@
             </div>
         </div>
     </nav>
-    <!-- Titulo boas vindas -->
-    <section class="text-center">
-        <div class="m-5">
-            <h1 class="text-danger">Sejam Bem vindo </h1>
-            <p>Venha nos Conhecer</p>
+    <!-- Carrossel de apresentação -->
+    <!-- ...código existente... -->
+    <!-- Carrossel de apresentação responsivo e 100% largura -->
+    <div class="container-fluid p-0">
+        <div id="carouselBanner" class="carousel slide w-100 m-0" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./css/assests/imagem.5.jpeg" class="d-block w-100" alt="Banner 1"
+                        style="height: 25vw; min-height: 150px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-bg-dark rounded">Clinica de Estetica Capilar</h5>
+                        <p class="text-danger text-bg-dark rounded">Dr.Jessica Landim</p>
+                        <a href="#" class="btn btn-danger">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./css/assests/imagem.10.jpeg" class="d-block w-100" alt="Banner 1"
+                        style="height: 25vw; min-height: 150px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-bg-dark rounded">Tratamento Capilar</h5>
+                        <p class="text-danger text-bg-dark rounded">Especialistas em saúde dos fios</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./css/assests/imagem.9.jpeg" class="d-block w-100" alt="Banner 3"
+                        style="height: 25vw; min-height: 150px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-bg-dark rounded">Resultados Reais</h5>
+                        <p class="text-danger text-bg-dark rounded">Veja nossos casos de sucesso</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
         </div>
-
-    </section>
-    <!-- Card de apresentação -->
-    <div class="card m-5" style="width: 18rem;">
-        <img src="./assests/imagem.5.jpeg" class="card-img-top" alt="..." width="200" height="300">
-        <div class="card-body">
-            <h5 class="card-title text-dark-emphasis ">Clinica de Estetica Capilar </h5>
-            <h5 class="card-text text-danger ">Dr.Jessica Landim </h5>
-            <a href="#" class="btn btn-danger">Saiba mais</a>
-            
+    </div>
+    <!-- ...código existente... -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./css/assests/imagem.1.jpeg" class="card-img-top zoomable" alt="..."
+                        style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Título 1</h5>
+                        <p class="card-text">Descrição do card 1.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./css/assests/imagem.2.jpeg" class="card-img-top zoomable" alt="..."
+                        style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Título 2</h5>
+                        <p class="card-text">Descrição do card 2.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./css/assests/imagem.3.jpeg" class="card-img-top zoomable" alt="..."
+                        style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Título 3</h5>
+                        <p class="card-text">Descrição do card 3.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./css/assests/imagem.4.jpeg" class="card-img-top zoomable" alt="..."
+                        style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Título 4</h5>
+                        <p class="card-text">Descrição do card 4.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./css/assests/imagem.5.jpeg" class="card-img-top zoomable" alt="..."
+                        style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Título 5</h5>
+                        <p class="card-text">Descrição do card 5.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./css/assests/imagem.6.jpeg" class="card-img-top zoomable" alt="..."
+                        style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Título 6</h5>
+                        <p class="card-text">Descrição do card 6.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
 
+    <!-- CSS para efeito de zoom -->
+    <style>
+        .zoomable {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .zoomable.zoomed {
+            transform: scale(2);
+            z-index: 999;
+            position: relative;
+        }
+    </style>
+
+    <!-- Script para zoom ao clicar -->
+    <script>
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', function () {
+                this.classList.toggle('zoomed');
+            });
+        });
+    </script>
+    <!-- ...código existente... -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
