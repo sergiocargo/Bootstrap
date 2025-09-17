@@ -4,10 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Habilidade</title>
+    <title>Habilidades</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+
         .color-dot {
             width: 22px;
             height: 22px;
@@ -31,12 +36,6 @@
 
         .zoomable:hover {
             transform: scale(1.05);
-        }
-
-        .zoomable.zoomed {
-            transform: scale(2);
-            z-index: 999;
-            position: relative;
         }
 
         @media (max-width: 767px) {
@@ -64,8 +63,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="./css/assests/Logotipo2.png" alt="Logo" width="40" height="50"
-                class="d-inline-block align-text-top me-3">
+            <img src="./css/assests/Logotipo2.png" alt="Logo" width="40" height="50" class="d-inline-block align-text-top me-3 zoomable">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,71 +83,45 @@
         </div>
     </nav>
 
-    <!-- Carrossel -->
-    <div id="carouselHabilidade" class="carousel slide m-5">
+    <!-- Carrossel Home -->
+    <div id="carouselHome" class="carousel slide m-5">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./css/assests/Capilar/Alta frequência/imagem2.jpg" class="d-block w-100" alt="Slide 1" style="height: 400px; object-fit: cover;">
+                <img src="./css/assests/Capilar/Jessica/imagem.1.jpeg" class="d-block w-100 zoomable" alt="Slide 1" style="height: 400px; object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="./css/assests/Capilar/Argilaterapia/imagem3.jpg" class="d-block w-100" alt="Slide 2" style="height: 400px; object-fit: cover;">
+                <img src="./css/assests/Capilar/Jessica/imagem.2.jpeg" class="d-block w-100 zoomable" alt="Slide 2" style="height: 400px; object-fit: cover;">
             </div>
             <div class="carousel-item">
-                <img src="./css/assests/Capilar/Aromaterapia/image1.jpg" class="d-block w-100" alt="Slide 3" style="height: 400px; object-fit: cover;">
+                <img src="./css/assests/Capilar/Jessica/imagem.3.jpeg" class="d-block w-100 zoomable" alt="Slide 3" style="height: 400px; object-fit: cover;">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHabilidade" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselHabilidade" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
         </button>
     </div>
 
-    <!-- Cards de habilidades com zoom -->
+    <!-- Cards Habilidades -->
     <div class="container mb-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100 zoom-card">
-                    <img src="./css/assests/Capilar/Tricologia/image2.jpg" class="card-img-top zoomable" alt="Habilidade 1">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card">
-                    <img src="./css/assests/Capilar/Ozônio terapia/imagem2.jpg" class="card-img-top zoomable" alt="Habilidade 2">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card">
-                    <img src="./css/assests/Capilar/Microagulhamento/imagem2.jpg" class="card-img-top zoomable" alt="Habilidade 3">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card">
-                    <img src="./css/assests/Capilar/LED terapia/image3.jpg" class="card-img-top zoomable" alt="Habilidade 4">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card">
-                    <img src="./css/assests/Capilar/LASER terapia/image1.jpg" class="card-img-top zoomable" alt="Habilidade 5">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card">
-                    <img src="./css/assests/Capilar/Intradermoterapia/imagem1.jpg" class="card-img-top zoomable" alt="Habilidade 6">
-                </div>
-            </div>
+            <div class="col"><div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Tricologia/image1.jpg" class="card-img-top zoomable" alt="Tricologia"></div></div>
+            <div class="col"><div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Ozônio terapia/imagem2.jpg" class="card-img-top zoomable" alt="Ozônio Terapia"></div></div>
+            <div class="col"><div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Microagulhamento/imagem2.jpg" class="card-img-top zoomable" alt="Microagulhamento"></div></div>
+            <div class="col"><div class="card h-100 zoom-card"><img src="./css/assests/Capilar/LED terapia/image3.jpg" class="card-img-top zoomable" alt="LED Terapia"></div></div>
+            <div class="col"><div class="card h-100 zoom-card"><img src="./css/assests/Capilar/LASER terapia/image2.jpg" class="card-img-top zoomable" alt="LASER Terapia"></div></div>
+            <div class="col"><div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Intradermoterapia/imagem1.jpg" class="card-img-top zoomable" alt="Intradermoterapia"></div></div>
         </div>
     </div>
 
-    <!-- Modal para Zoom -->
+    <!-- Modal Zoom -->
     <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-dark">
                 <div class="modal-body p-0">
-                    <img src="" id="zoomedImg" class="w-100" style="object-fit: contain; max-height: 80vh;">
+                    <img id="zoomedImg" src="" class="w-100" style="object-fit:contain; max-height:80vh;">
                 </div>
             </div>
         </div>
@@ -158,42 +130,34 @@
     <!-- Footer -->
     <footer class="bg-dark text-center text-white py-4 mt-5">
         <div class="container">
-            <a href="https://wa.me/" target="_blank" class="mx-2" title="WhatsApp">
-                <i class="bi bi-whatsapp" style="font-size: 2rem; color: #25D366;"></i>
-            </a>
-            <a href="https://linkedin.com/" target="_blank" class="mx-2" title="LinkedIn">
-                <i class="bi bi-linkedin" style="font-size: 2rem; color: #0077B5;"></i>
-            </a>
-            <a href="https://instagram.com/" target="_blank" class="mx-2" title="Instagram">
-                <i class="bi bi-instagram" style="font-size: 2rem; color: #E4405F;"></i>
-            </a>
-            <a href="mailto:seu@email.com" class="mx-2" title="E-mail">
-                <i class="bi bi-envelope-fill" style="font-size: 2rem; color: #EA4335;"></i>
-            </a>
+            <a href="https://wa.me/" target="_blank" class="mx-2"><i class="bi bi-whatsapp" style="font-size:2rem;color:#25D366;"></i></a>
+            <a href="https://linkedin.com/" target="_blank" class="mx-2"><i class="bi bi-linkedin" style="font-size:2rem;color:#0077B5;"></i></a>
+            <a href="https://instagram.com/" target="_blank" class="mx-2"><i class="bi bi-instagram" style="font-size:2rem;color:#E4405F;"></i></a>
+            <a href="mailto:seu@email.com" class="mx-2"><i class="bi bi-envelope-fill" style="font-size:2rem;color:#EA4335;"></i></a>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Zoom nas imagens dos banners/cards
-        document.querySelectorAll('.zoomable').forEach(img => {
-            img.addEventListener('click', function () {
-                document.getElementById('zoomedImg').src = this.src;
-                var zoomModal = new bootstrap.Modal(document.getElementById('zoomModal'));
-                zoomModal.show();
+        document.addEventListener("DOMContentLoaded", function () {
+            // Zoom nas imagens
+            document.querySelectorAll('.zoomable').forEach(img => {
+                img.addEventListener('click', function () {
+                    document.getElementById('zoomedImg').src = this.src;
+                    new bootstrap.Modal(document.getElementById('zoomModal')).show();
+                });
             });
-        });
 
-        // Troca de cor de fundo pelas bolinhas
-        document.querySelectorAll('.color-dot').forEach(dot => {
-            dot.addEventListener('click', function () {
-                document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
-                this.classList.add('active');
-                document.body.style.background = this.getAttribute('data-bg');
+            // Troca de cor de fundo pelas bolinhas
+            document.querySelectorAll('.color-dot').forEach(dot => {
+                dot.addEventListener('click', function () {
+                    document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+                    this.classList.add('active');
+                    document.body.style.background = this.getAttribute('data-bg');
+                });
             });
         });
     </script>
 </body>
-
 </html>
