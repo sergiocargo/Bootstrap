@@ -4,10 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Habilidades - Clínica Capilar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+
         .color-dot {
             width: 22px;
             height: 22px;
@@ -33,23 +38,30 @@
             transform: scale(1.05);
         }
 
-        @media (max-width: 767px) {
-            .carousel-inner img {
-                height: 220px !important;
-            }
+        .card-img-wrapper {
+            height: 220px;
+            overflow: hidden;
+        }
 
-            .card-img-top {
-                height: 140px;
-                object-fit: cover;
-            }
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
 
-            .card-title {
-                font-size: 1rem;
-            }
+        .card-img-wrapper img:hover {
+            transform: scale(1.05);
+        }
 
-            .navbar-nav {
-                text-align: center;
-            }
+        .btn-saiba {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .card-body {
+            position: relative;
         }
     </style>
 </head>
@@ -58,7 +70,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="./css/assests/Logotipo.jpeg" alt="Logo" width="40" height="50"
+            <img src="./css/assests/Logotipo2.png" alt="Logo" width="40" height="50"
                 class="d-inline-block align-text-top me-3 zoomable">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent">
@@ -66,125 +78,161 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="habilidade.html">Habilidade</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="habilidade.html">Habilidade</a></li>
                     <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 </ul>
-                <div class="d-flex align-items-center ms-3">
-                    <div class="color-dot mx-1" style="background:#f8d568;" data-bg="#f8d568" title="Amarelo"></div>
-                    <div class="color-dot mx-1" style="background:#6dd47e;" data-bg="#6dd47e" title="Verde"></div>
-                    <div class="color-dot mx-1" style="background:#6ec6ff;" data-bg="#6ec6ff" title="Azul"></div>
-                    <div class="color-dot mx-1" style="background:#f67280;" data-bg="#f67280" title="Rosa"></div>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Carrossel principal -->
-    <div id="carouselHome" class="carousel slide m-5">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./css/assests/Capilar/Jessica/imagem.1.jpeg" class="d-block w-100 zoomable" alt="Slide 1"
-                    style="height: 400px; object-fit: cover;">
+    <!-- Cards Habilidades -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Nossas Habilidades</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="./css/assests/Capilar/Tricologia/image1.jpg" class="card-img-top zoomable" alt="Tricologia"
+                            data-text="A tricologia capilar é a área da medicina e estética que estuda os cabelos e o couro cabeludo, focando no diagnóstico, prevenção e tratamento de diversas condições.">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tricologia</h5>
+                        <button class="btn btn-primary btn-saiba" data-bs-toggle="modal" data-bs-target="#zoomModal"
+                            data-img="./css/assests/Capilar/Tricologia/image1.jpg"
+                            data-text="A tricologia capilar é a área da medicina e estética que estuda os cabelos e o couro cabeludo, focando no diagnóstico, prevenção e tratamento de diversas condições.">Saiba mais</button>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="./css/assests/Capilar/Jessica/imagem.2.jpeg" class="d-block w-100 zoomable" alt="Slide 2"
-                    style="height: 400px; object-fit: cover;">
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="./css/assests/Capilar/Ozônio terapia/imagem2.jpg" class="card-img-top zoomable"
+                            alt="Ozonioterapia"
+                            data-text="A ozonioterapia capilar utiliza o gás ozônio para melhorar a saúde do couro cabeludo e dos fios, estimulando circulação e fortalecendo os folículos.">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ozonioterapia</h5>
+                        <button class="btn btn-primary btn-saiba" data-bs-toggle="modal" data-bs-target="#zoomModal"
+                            data-img="./css/assests/Capilar/Ozônio terapia/imagem2.jpg"
+                            data-text="A ozonioterapia capilar utiliza o gás ozônio para melhorar a saúde do couro cabeludo e dos fios, estimulando circulação e fortalecendo os folículos.">Saiba mais</button>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="./css/assests/Capilar/Jessica/imagem.3.jpeg" class="d-block w-100 zoomable" alt="Slide 3"
-                    style="height: 400px; object-fit: cover;">
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="./css/assests/Capilar/Microagulhamento/imagem2.jpg" class="card-img-top zoomable"
+                            alt="Microagulhamento"
+                            data-text="O microagulhamento é um procedimento estético que utiliza microagulhas para estimular a produção de colágeno e regenerar a pele e o couro cabeludo.">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Microagulhamento</h5>
+                        <button class="btn btn-primary btn-saiba" data-bs-toggle="modal" data-bs-target="#zoomModal"
+                            data-img="./css/assests/Capilar/Microagulhamento/imagem2.jpg"
+                            data-text="O microagulhamento é um procedimento estético que utiliza microagulhas para estimular a produção de colágeno e regenerar a pele e o couro cabeludo.">Saiba mais</button>
+                    </div>
+                </div>
             </div>
+
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="./css/assests/Capilar/LED terapia/image3.jpg" class="card-img-top zoomable"
+                            alt="LED Terapia"
+                            data-text="A LED terapia utiliza luzes específicas para estimular o crescimento capilar, melhorar a circulação e fortalecer os fios.">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">LED Terapia</h5>
+                        <button class="btn btn-primary btn-saiba" data-bs-toggle="modal" data-bs-target="#zoomModal"
+                            data-img="./css/assests/Capilar/LED terapia/image3.jpg"
+                            data-text="A LED terapia utiliza luzes específicas para estimular o crescimento capilar, melhorar a circulação e fortalecer os fios.">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="./css/assests/Capilar/LASER terapia/image2.jpg" class="card-img-top zoomable"
+                            alt="LASER Terapia"
+                            data-text="O LASER capilar atua na regeneração dos fios, aumentando o brilho, fortalecendo o couro cabeludo e estimulando o crescimento saudável.">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">LASER Terapia</h5>
+                        <button class="btn btn-primary btn-saiba" data-bs-toggle="modal" data-bs-target="#zoomModal"
+                            data-img="./css/assests/Capilar/LASER terapia/image2.jpg"
+                            data-text="O LASER capilar atua na regeneração dos fios, aumentando o brilho, fortalecendo o couro cabeludo e estimulando o crescimento saudável.">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="./css/assests/Capilar/Intradermoterapia/imagem1.jpg" class="card-img-top zoomable"
+                            alt="Intradermoterapia"
+                            data-text="A intradermoterapia consiste na aplicação de ativos específicos no couro cabeludo para tratar queda, estimular crescimento e melhorar a saúde capilar.">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Intradermoterapia</h5>
+                        <button class="btn btn-primary btn-saiba" data-bs-toggle="modal" data-bs-target="#zoomModal"
+                            data-img="./css/assests/Capilar/Intradermoterapia/imagem1.jpg"
+                            data-text="A intradermoterapia consiste na aplicação de ativos específicos no couro cabeludo para tratar queda, estimular crescimento e melhorar a saúde capilar.">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
-    <!-- 6 Banners/cards com zoom -->
-    <div class="container mb-5">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Jessica/imagem.4.jpeg"
-                        class="card-img-top zoomable" alt="Banner 1"></div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Jessica/imagem.5.jpeg"
-                        class="card-img-top zoomable" alt="Banner 2"></div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Jessica/imagem.6.jpeg"
-                        class="card-img-top zoomable" alt="Banner 3"></div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Jessica/imagem.7.jpeg"
-                        class="card-img-top zoomable" alt="Banner 4"></div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Jessica/imagem.8.jpeg"
-                        class="card-img-top zoomable" alt="Banner 5"></div>
-            </div>
-            <div class="col">
-                <div class="card h-100 zoom-card"><img src="./css/assests/Capilar/Jessica/imagem.9.jpeg"
-                        class="card-img-top zoomable" alt="Banner 6"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal para Zoom -->
-    <!-- Modal para Zoom -->
+    <!-- Modal Zoom -->
     <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark">
-                <div class="modal-body p-0">
-                    <img src="" id="zoomedImg" class="w-100" style="object-fit: contain; max-height: 80vh;">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-body p-3">
+                    <img id="zoomedImg" src="" class="w-100 mb-3" style="object-fit:contain; max-height:60vh;">
+                    <p id="zoomedText"></p>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
     </div>
 
-
     <!-- Footer -->
     <footer class="bg-dark text-center text-white py-4 mt-5">
         <div class="container">
-            <a href="https://wa.me/" target="_blank" class="mx-2" title="WhatsApp">
-                <i class="bi bi-whatsapp" style="font-size: 2rem; color: #25D366;"></i>
-            </a>
-            <a href="https://linkedin.com/" target="_blank" class="mx-2" title="LinkedIn">
-                <i class="bi bi-linkedin" style="font-size: 2rem; color: #0077B5;"></i>
-            </a>
-            <a href="https://instagram.com/" target="_blank" class="mx-2" title="Instagram">
-                <i class="bi bi-instagram" style="font-size: 2rem; color: #E4405F;"></i>
-            </a>
-            <a href="mailto:seu@email.com" class="mx-2" title="E-mail">
-                <i class="bi bi-envelope-fill" style="font-size: 2rem; color: #EA4335;"></i>
-            </a>
+            <a href="https://wa.me/" target="_blank" class="mx-2"><i class="bi bi-whatsapp"
+                    style="font-size:2rem;color:#25D366;"></i></a>
+            <a href="https://linkedin.com/" target="_blank" class="mx-2"><i class="bi bi-linkedin"
+                    style="font-size:2rem;color:#0077B5;"></i></a>
+            <a href="https://instagram.com/" target="_blank" class="mx-2"><i class="bi bi-instagram"
+                    style="font-size:2rem;color:#E4405F;"></i></a>
+            <a href="mailto:seu@email.com" class="mx-2"><i class="bi bi-envelope-fill"
+                    style="font-size:2rem;color:#EA4335;"></i></a>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Zoom e texto do modal
         document.addEventListener("DOMContentLoaded", function () {
-            // Zoom nas imagens
-            document.querySelectorAll('.zoomable').forEach(img => {
-                img.addEventListener('click', function () {
-                    document.getElementById('zoomedImg').src = this.src;
-                    new bootstrap.Modal(document.getElementById('zoomModal')).show();
-                });
-            });
-
-            // Troca de cor de fundo pelas bolinhas
-            document.querySelectorAll('.color-dot').forEach(dot => {
-                dot.addEventListener('click', function () {
-                    document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
-                    this.classList.add('active');
-                    document.body.style.background = this.getAttribute('data-bg');
+            document.querySelectorAll('.btn-saiba').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const img = this.getAttribute('data-img');
+                    const text = this.getAttribute('data-text');
+                    document.getElementById('zoomedImg').src = img;
+                    document.getElementById('zoomedText').textContent = text;
                 });
             });
         });
