@@ -57,20 +57,41 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-dark bg-dark px-3">
-    <a class="navbar-brand zoomable" href="#" data-text="Logotipo">
-      <img src="./css/assests/Capilar/logotipo.png" alt="Logo">
-    </a>
-    <div class="ms-auto d-flex">
-      <a class="nav-link text-white" href="index.html">Home</a>
-      <a class="nav-link active text-warning" href="habilidade.html">Habilidade</a>
-      <a class="nav-link text-white" href="contato.html">Contato</a>
-      <span class="color-dot" data-bg="#000" style="background-color:#000;"></span>
-      <span class="color-dot" data-bg="#111" style="background-color:#111;"></span>
-      <span class="color-dot" data-bg="#222" style="background-color:#222;"></span>
-      <span class="color-dot" data-bg="#333" style="background-color:#333;"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <a class="navbar-brand zoomable" href="#" data-text="Logotipo">
+    <img src="./css/assests/Capilar/logotipo.png" alt="Logo">
+  </a>
+
+  <!-- Botão de menu (mobile) -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Links + bolinhas -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-warning" href="habilidade.html">Habilidade</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="contato.html">Contato</a>
+      </li>
+    </ul>
+
+    <!-- Bolinhas de cor -->
+    <div class="d-flex align-items-center ms-3">
+      <div class="color-dot mx-1" style="background:#f8d568;" data-bg="#f8d568" title="Amarelo"></div>
+      <div class="color-dot mx-1" style="background:#6dd47e;" data-bg="#6dd47e" title="Verde"></div>
+      <div class="color-dot mx-1" style="background:#6ec6ff;" data-bg="#6ec6ff" title="Azul"></div>
+      <div class="color-dot mx-1" style="background:#f67280;" data-bg="#f67280" title="Rosa"></div>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <!-- Carrossel -->
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
