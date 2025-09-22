@@ -6,17 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nossas Habilidades</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <style>
-    body {
-      background-color: #000;
-      color: #fff;
-    }
+    :root { --bg: #121212; --card-height: 220px; }
 
-    .navbar-brand img {
-      height: 50px;
-      cursor: pointer;
+    body {
+      background-color: var(--bg);
+      color: #fff;
     }
 
     .color-dot {
@@ -29,46 +25,83 @@
       border: 2px solid #fff;
     }
 
-    .card {
-      background-color: #111;
-      border: none;
-      transition: transform 0.3s ease;
+    .color-dot:hover,
+    .color-dot.active {
+      border: 2px solid #222;
+      box-shadow: 0 0 8px 2px #0003;
     }
 
-    .card:hover {
+    .zoomable {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .zoomable:hover {
       transform: scale(1.05);
     }
 
-    .card img {
-      height: 250px;
+    .card-img-wrapper {
+      height: var(--card-height);
+      overflow: hidden;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .card-img-wrapper img:hover {
+      transform: scale(1.05);
     }
 
     #zoomedImg {
-      max-width: 100%;
-      max-height: 80vh;
-      margin: auto;
-      display: block;
+      max-height: 60vh;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 767px) {
+      .card-img-wrapper {
+        height: 160px;
+      }
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .navbar-nav {
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <!-- Navbar -->
-  <nav class="navbar navbar-dark bg-dark px-3">
-    <a class="navbar-brand zoomable" href="#" data-text="Logotipo">
-      <img src="./css/assests/Capilar/logotipo.png" alt="Logo">
-    </a>
-    <div class="ms-auto d-flex">
-      <a class="nav-link text-white" href="index.html">Home</a>
-      <a class="nav-link active text-warning" href="habilidade.html">Habilidade</a>
-      <a class="nav-link text-white" href="contato.html">Contato</a>
-      <span class="color-dot" data-bg="#000" style="background-color:#000;"></span>
-      <span class="color-dot" data-bg="#111" style="background-color:#111;"></span>
-      <span class="color-dot" data-bg="#222" style="background-color:#222;"></span>
-      <span class="color-dot" data-bg="#333" style="background-color:#333;"></span>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="./css/assests/Logotipo2.png" alt="Logo" width="40" height="50" class="me-3 zoomable">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSupportContent"
+        aria-controls="navbarNavSupportContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavSupportContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="habilidade.html">Habilidade</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <div class="color-dot mx-2" style="background:#f8d568" data-bg="#f8d568" title="Amarelo"></div>
+          <div class="color-dot mx-2" style="background:#923892" data-bg="#923892" title="Roxo"></div>
+          <div class="color-dot mx-2" style="background:#79812a" data-bg="#79812a" title="Verde"></div>
+          <div class="color-dot mx-2" style="background:#5e3a19" data-bg="#5e3a19" title="Marrom"></div>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -76,20 +109,25 @@
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./css/assests/Capilar/banner1.jpeg" class="d-block w-100" alt="Banner 1" style="height:300px;object-fit:cover;">
+        <img src="./css/assests/Capilar/Alta frequência/imagem3.jpg" class="d-block w-100" alt="Banner 1"
+          style="height:300px;object-fit:cover;">
       </div>
       <div class="carousel-item">
-        <img src="./css/assests/Capilar/banner2.jpeg" class="d-block w-100" alt="Banner 2" style="height:300px;object-fit:cover;">
+        <img src="./css/assests/Capilar/Argilaterapia/imagem3.jpg" class="d-block w-100" alt="Banner 2"
+          style="height:300px;object-fit:cover;">
       </div>
       <div class="carousel-item">
-        <img src="./css/assests/Capilar/banner3.jpeg" class="d-block w-100" alt="Banner 3" style="height:300px;object-fit:cover;">
+        <img src="./css/assests/Capilar/Argilaterapia/imagem1.jpg" class="d-block w-100" alt="Banner 3"
+          style="height:300px;object-fit:cover;">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
     </button>
   </div>
 
@@ -104,72 +142,90 @@
 
       <!-- Card 1 -->
       <div class="col-md-4">
-        <div class="card text-center">
-          <img src="./css/assests/Capilar/Jessica/imagem.1.jpeg" class="card-img-top zoomable"
-            alt="Especialista 1" data-text="Descrição da habilidade 1">
+        <div class="card text-center bg-dark text-light">
+          <div class="card-img-wrapper">
+            <img src="./css/assests/Capilar/Jessica/imagem.1.jpeg" class="card-img-top zoomable" alt="Especialista 1"
+              data-text="Descrição da habilidade 1" loading="lazy">
+          </div>
           <div class="card-body">
             <h5 class="card-title">Habilidade 1</h5>
-            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="col-md-4">
-        <div class="card text-center">
-          <img src="./css/assests/Capilar/Jessica/imagem.2.jpeg" class="card-img-top zoomable"
-            alt="Especialista 2" data-text="Descrição da habilidade 2">
+        <div class="card text-center bg-dark text-light">
+          <div class="card-img-wrapper">
+            <img src="./css/assests/Capilar/Jessica/imagem.2.jpeg" class="card-img-top zoomable" alt="Especialista 2"
+              data-text="Descrição da habilidade 2" loading="lazy">
+          </div>
           <div class="card-body">
             <h5 class="card-title">Habilidade 2</h5>
-            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal2">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal2">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="col-md-4">
-        <div class="card text-center">
-          <img src="./css/assests/Capilar/Jessica/imagem.3.jpeg" class="card-img-top zoomable"
-            alt="Especialista 3" data-text="Descrição da habilidade 3">
+        <div class="card text-center bg-dark text-light">
+          <div class="card-img-wrapper">
+            <img src="./css/assests/Capilar/Jessica/imagem.3.jpeg" class="card-img-top zoomable" alt="Especialista 3"
+              data-text="Descrição da habilidade 3" loading="lazy">
+          </div>
           <div class="card-body">
             <h5 class="card-title">Habilidade 3</h5>
-            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal3">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal3">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="col-md-4">
-        <div class="card text-center">
-          <img src="./css/assests/Capilar/Jessica/imagem.4.jpeg" class="card-img-top zoomable"
-            alt="Especialista 4" data-text="Descrição da habilidade 4">
+        <div class="card text-center bg-dark text-light">
+          <div class="card-img-wrapper">
+            <img src="./css/assests/Capilar/Jessica/imagem.9.jpeg" class="card-img-top zoomable" alt="Especialista 4"
+              data-text="Descrição da habilidade 4" loading="lazy">
+          </div>
           <div class="card-body">
             <h5 class="card-title">Habilidade 4</h5>
-            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal4">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal4">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 5 -->
       <div class="col-md-4">
-        <div class="card text-center">
-          <img src="./css/assests/Capilar/Jessica/imagem.5.jpeg" class="card-img-top zoomable"
-            alt="Especialista 5" data-text="Descrição da habilidade 5">
+        <div class="card text-center bg-dark text-light">
+          <div class="card-img-wrapper">
+            <img src="./css/assests/Capilar/Jessica/imagem.5.jpeg" class="card-img-top zoomable" alt="Especialista 5"
+              data-text="Descrição da habilidade 5" loading="lazy">
+          </div>
           <div class="card-body">
             <h5 class="card-title">Habilidade 5</h5>
-            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal5">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal5">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 6 -->
       <div class="col-md-4">
-        <div class="card text-center">
-          <img src="./css/assests/Capilar/Jessica/imagem.6.jpeg" class="card-img-top zoomable"
-            alt="Especialista 6" data-text="Descrição da habilidade 6">
+        <div class="card text-center bg-dark text-light">
+          <div class="card-img-wrapper">
+            <img src="./css/assests/Capilar/Jessica/imagem.6.jpeg" class="card-img-top zoomable" alt="Especialista 6"
+              data-text="Descrição da habilidade 6" loading="lazy">
+          </div>
           <div class="card-body">
             <h5 class="card-title">Habilidade 6</h5>
-            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal6">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal6">Saiba
+              mais</button>
           </div>
         </div>
       </div>
@@ -178,72 +234,72 @@
   </div>
 
   <!-- Modais dos cards -->
-  <div class="modal fade" id="modal1" tabindex="-1">
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title">Habilidade 1</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Texto explicativo sobre habilidade 1.</div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modal2" tabindex="-1">
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title">Habilidade 2</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Texto explicativo sobre habilidade 2.</div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modal3" tabindex="-1">
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title">Habilidade 3</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Texto explicativo sobre habilidade 3.</div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modal4" tabindex="-1">
+  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title">Habilidade 4</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Texto explicativo sobre habilidade 4.</div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modal5" tabindex="-1">
+  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title">Habilidade 5</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Texto explicativo sobre habilidade 5.</div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="modal6" tabindex="-1">
+  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
           <h5 class="modal-title">Habilidade 6</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Texto explicativo sobre habilidade 6.</div>
       </div>
@@ -251,11 +307,11 @@
   </div>
 
   <!-- Modal de Zoom -->
-  <div class="modal fade" id="zoomModal" tabindex="-1">
+  <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content bg-dark text-light text-center">
         <div class="modal-body">
-          <img id="zoomedImg" src="" alt="Zoom">
+          <img id="zoomedImg" src="./css/assests/Logotipo.jpeg" alt="Zoom" class="img-fluid">
           <p id="zoomedText" class="mt-2"></p>
         </div>
       </div>
@@ -278,7 +334,31 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./java.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Troca de cor do fundo pelas bolinhas
+      document.querySelectorAll('.color-dot').forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          document.querySelectorAll('.color-dot').forEach(function(d) { d.classList.remove('active'); });
+          this.classList.add('active');
+          var bg = this.getAttribute('data-bg');
+          if (bg) document.body.style.background = bg;
+        });
+      });
+
+      // Zoom nas imagens
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var zoomImg = document.getElementById('zoomedImg');
+          zoomImg.src = this.src;
+          var txt = this.getAttribute('data-text') || '';
+          document.getElementById('zoomedText').textContent = txt;
+          var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+          modal.show();
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
