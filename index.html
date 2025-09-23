@@ -34,6 +34,17 @@
       </div>
     </div>
   </nav>
+  <!-- Modal Zoom (somente imagens) -->
+  <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-body p-0">
+          <img id="zoomedImg" src="" alt="Imagem ampliada" class="w-100 mb-3"
+            style="object-fit:contain; max-height:60vh;">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Carrossel -->
   <div id="carouselHome" class="carousel slide">
@@ -68,15 +79,16 @@
       <div class="col">
         <div class="card h-100">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img1.jpeg" class="card-img-top zoomable" alt="Dra 1"
+            <img src="img/Jessica/img2.jpeg" class="card-img-top zoomable" alt="Dra 1"
               data-text="Aqui estou usando lazer de baixa intensidade para estimular o crescimento capilar.">
           </div>
           <div class="card-body text-center">
-            <h5 class="card-title">Especialista 1</h5>
-            <button class="btn btn-outline-light btn-sm zoomable"
-              data-text="O laser capilar é um tratamento estético não invasivo que utiliza luz de baixa intensidade (LLLT ou fotobioestimulação) para tratar a queda de cabelo e calvície. Ele funciona melhorando a circulação sanguínea e a oxigenação dos folículos capilares, estimulando o crescimento dos fios, fortalecendo-os e aumentando sua espessura. O tratamento pode ser realizado com equipamentos como capacetes e tiaras, servindo como um complemento a outras terapias, mas não como um substituto delas.  ">
+            <h5 class="card-title">laser capilar</h5>
+            <button class="btn btn-outline-light btn-sm text-trigger"
+              data-text="O laser capilar é um tratamento estético não invasivo que utiliza luz de baixa intensidade (LLLT ou fotobioestimulação) para tratar a queda de cabelo e calvície. Ele funciona melhorando a circulação sanguínea e a oxigenação dos folículos capilares, estimulando o crescimento dos fios, fortalecendo-os e aumentando sua espessura. O tratamento pode ser realizado com equipamentos como capacetes e tiaras, servindo como um complemento a outras terapias, mas não como um substituto delas.">
               Saiba mais
             </button>
+
           </div>
         </div>
       </div>
@@ -85,7 +97,7 @@
       <div class="col">
         <div class="card h-100">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img2.jpeg" class="card-img-top zoomable" alt="Dra 2"
+            <img src="img/Jessica/img1.jpeg" class="card-img-top zoomable" alt="Dra 2"
               data-text="Descrição sobre a Dra 2">
           </div>
           <div class="card-body text-center">
@@ -154,16 +166,12 @@
     </div>
   </div>
 
-  <!-- Modal Zoom -->
-  <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+  <!-- Modal de Texto -->
+  <div class="modal fade" id="textModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-white">
         <div class="modal-body p-3">
-          <img src="img/Jessica/Logotipo.jpeg" alt="Logo" width="40" height="50"
-            class="d-inline-block align-text-top mb-3">
-          <p id="zoomedText"></p>
-          <img id="zoomedImg" src="img/Capilar/Microagulhamento/imagem2.jpg"
-            alt="Imagem de microagulhamento capilar" class="w-100 mb-3" style="object-fit:contain; max-height:60vh;">
+          <p id="modalText"></p>
         </div>
         <div class="modal-footer border-top-0">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -171,6 +179,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- Footer -->
   <footer class="bg-dark text-center text-white py-4 mt-5">

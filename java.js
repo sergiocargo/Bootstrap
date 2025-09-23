@@ -62,3 +62,29 @@ function gerarMapaIframe(endereco) {
     let iframe = `<iframe src="https://www.google.com/maps?q=${enderecoFormatado}&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
     return iframe;
 }
+document.querySelectorAll('.btn[data-text]').forEach(btn => {
+    btn.addEventListener('click', function () {
+        document.getElementById('modalText').textContent = this.getAttribute('data-text');
+        new bootstrap.Modal(document.getElementById('textModal')).show();
+    });
+});
+// Abrir imagens no zoom
+document.querySelectorAll(".zoomable").forEach(img => {
+    img.addEventListener("click", function () {
+        const zoomedImg = document.getElementById("zoomedImg");
+        zoomedImg.src = this.src;
+        zoomedImg.alt = this.alt;
+        const zoomModal = new bootstrap.Modal(document.getElementById("zoomModal"));
+        zoomModal.show();
+    });
+});
+
+// Abrir textos no modal de texto
+document.querySelectorAll(".text-trigger").forEach(btn => {
+    btn.addEventListener("click", function () {
+        const modalText = document.getElementById("modalText");
+        modalText.textContent = this.getAttribute("data-text") || "Informação não disponível.";
+        const textModal = new bootstrap.Modal(document.getElementById("textModal"));
+        textModal.show();
+    });
+});
