@@ -8,6 +8,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --card-height: 180px; /* cards menores */
+    }
+
+    .card-img-wrapper {
+      height: var(--card-height);
+      overflow: hidden;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .card-img-wrapper img:hover {
+      transform: scale(1.05);
+    }
+
+    #zoomedImg {
+      max-height: 60vh;
+      width: 100%;
+      object-fit: contain;
+    }
+  </style>
 </head>
 
 <body>
@@ -25,29 +53,12 @@
           <li class="nav-item"><a class="nav-link" href="habilidade.html">Habilidade</a></li>
           <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
         </ul>
-        <div class="d-flex align-items-center ms-3">
-          <div class="color-dot mx-1" style="background:#f8d568;" data-bg="#f8d568" title="Amarelo"></div>
-          <div class="color-dot mx-1" style="background:#6dd47e;" data-bg="#6dd47e" title="Verde"></div>
-          <div class="color-dot mx-1" style="background:#6ec6ff;" data-bg="#6ec6ff" title="Azul"></div>
-          <div class="color-dot mx-1" style="background:#f67280;" data-bg="#f67280" title="Rosa"></div>
-        </div>
       </div>
     </div>
   </nav>
-  <!-- Modal Zoom (somente imagens) -->
-  <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content bg-dark">
-        <div class="modal-body p-0">
-          <img id="zoomedImg" src="" alt="Imagem ampliada" class="w-100 mb-3"
-            style="object-fit:contain; max-height:60vh;">
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Carrossel -->
-  <div id="carouselHome" class="carousel slide">
+  <div id="carouselHome" class="carousel slide my-4">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="img/Capilar/Alta_frequência/imagem1.jpg" class="d-block w-100 zoomable" alt="Banner 1"
@@ -77,88 +88,90 @@
 
       <!-- Card 1 -->
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-center bg-dark text-light">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img2.jpeg" class="card-img-top zoomable" alt="Dra 1"
-              data-text="Aqui estou usando lazer de baixa intensidade para estimular o crescimento capilar.">
+            <img src="img/Jessica/img2.jpeg" alt="Laser capilar" class="zoomable"
+              data-text="O laser capilar é um tratamento estético não invasivo que utiliza luz de baixa intensidade para tratar a queda de cabelo e calvície.">
           </div>
-          <div class="card-body text-center">
-            <h5 class="card-title">laser capilar</h5>
-            <button class="btn btn-outline-light btn-sm text-trigger"
-              data-text="O laser capilar é um tratamento estético não invasivo que utiliza luz de baixa intensidade (LLLT ou fotobioestimulação) para tratar a queda de cabelo e calvície. Ele funciona melhorando a circulação sanguínea e a oxigenação dos folículos capilares, estimulando o crescimento dos fios, fortalecendo-os e aumentando sua espessura. O tratamento pode ser realizado com equipamentos como capacetes e tiaras, servindo como um complemento a outras terapias, mas não como um substituto delas.">
-              Saiba mais
-            </button>
-
+          <div class="card-body">
+            <h5 class="card-title">Laser Capilar</h5>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-center bg-dark text-light">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img1.jpeg" class="card-img-top zoomable" alt="Dra 2"
-              data-text="Descrição sobre a Dra 2">
+            <img src="img/Jessica/img1.jpeg" alt="Especialista 2" class="zoomable"
+              data-text="Informações sobre a Dra 2, procedimentos e atendimento.">
           </div>
-          <div class="card-body text-center">
+          <div class="card-body">
             <h5 class="card-title">Especialista 2</h5>
-            <button class="btn btn-outline-light btn-sm zoomable">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal2">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-center bg-dark text-light">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img3.jpeg" class="card-img-top zoomable" alt="Dra 3"
-              data-text="Descrição sobre a Dra 3">
+            <img src="img/Jessica/img3.jpeg" alt="Especialista 3" class="zoomable"
+              data-text="Informações sobre a Dra 3, procedimentos e atendimento.">
           </div>
-          <div class="card-body text-center">
+          <div class="card-body">
             <h5 class="card-title">Especialista 3</h5>
-            <button class="btn btn-outline-light btn-sm zoomable">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal3">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-center bg-dark text-light">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img4.jpeg" class="card-img-top zoomable" alt="Dra 4"
-              data-text="Descrição sobre a Dra 4">
+            <img src="img/Jessica/img4.jpeg" alt="Especialista 4" class="zoomable"
+              data-text="Informações sobre a Dra 4, procedimentos e atendimento.">
           </div>
-          <div class="card-body text-center">
+          <div class="card-body">
             <h5 class="card-title">Especialista 4</h5>
-            <button class="btn btn-outline-light btn-sm zoomable">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal4">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 5 -->
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-center bg-dark text-light">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img5.jpeg" class="card-img-top zoomable" alt="Dra 5"
-              data-text="Descrição sobre a Dra 5">
+            <img src="img/Jessica/img5.jpeg" alt="Especialista 5" class="zoomable"
+              data-text="Informações sobre a Dra 5, procedimentos e atendimento.">
           </div>
-          <div class="card-body text-center">
+          <div class="card-body">
             <h5 class="card-title">Especialista 5</h5>
-            <button class="btn btn-outline-light btn-sm zoomable">Saiba mais</button>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal5">Saiba
+              mais</button>
           </div>
         </div>
       </div>
 
       <!-- Card 6 -->
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-center bg-dark text-light">
           <div class="card-img-wrapper">
-            <img src="img/Jessica/img6.jpeg" class="card-img-top zoomable" alt="Dra 6"
-              data-text="Descrição sobre a Dra 6">
+            <img src="img/Jessica/img6.jpeg" alt="LED Terapia" class="zoomable"
+              data-text="A LEDterapia capilar, ou fotobiomodulação, é um tratamento seguro e indolor que utiliza luzes de LED de comprimentos de onda específicos para estimular o metabolismo celular no couro cabeludo.">
           </div>
-          <div class="card-body text-center">
-            <h5 class="card-title">Especialista 6</h5>
-            <button class="btn btn-outline-light btn-sm zoomable">Saiba mais</button>
+          <div class="card-body">
+            <h5 class="card-title">LED Terapia</h5>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modal6">Saiba
+              mais</button>
           </div>
         </div>
       </div>
@@ -166,20 +179,62 @@
     </div>
   </div>
 
-  <!-- Modal de Texto -->
-  <div class="modal fade" id="textModal" tabindex="-1" aria-hidden="true">
+  <!-- Modais (apenas texto) -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark text-white">
-        <div class="modal-body p-3">
-          <p id="modalText"></p>
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title">Laser Capilar</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-footer border-top-0">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <div class="modal-body">
+          O laser capilar é um tratamento estético não invasivo que utiliza luz de baixa intensidade para tratar a queda de cabelo e calvície. Ele melhora a circulação sanguínea, oxigenação dos folículos capilares, fortalecendo os fios e aumentando a espessura.
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Modal 2 -->
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title">Especialista 2</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Informações sobre a Dra 2, procedimentos e atendimento.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title">Especialista 3</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Informações sobre a Dra 3, procedimentos e atendimento.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Zoom (para todas as imagens) -->
+  <div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-light text-center">
+        <div class="modal-body">
+          <img id="zoomedImg" src="" alt="Zoom" class="img-fluid">
+          <p id="zoomedText" class="mt-2"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-dark text-center text-white py-4 mt-5">
@@ -197,7 +252,19 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="java.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Zoom nas imagens
+      const zoomModal = new bootstrap.Modal(document.getElementById('zoomModal'));
+      document.querySelectorAll('.zoomable').forEach(img => {
+        img.addEventListener('click', function () {
+          document.getElementById('zoomedImg').src = this.src;
+          document.getElementById('zoomedText').textContent = this.dataset.text || '';
+          zoomModal.show();
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
