@@ -1,0 +1,176 @@
+/* ------------------------------
+   Variáveis e fundo geral
+------------------------------ */
+:root {
+  --bg: #121212;
+  --card-height: 220px;
+}
+
+body {
+  background-color: var(--bg);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------
+   Bolinhas de troca de cor
+------------------------------ */
+.color-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s;
+  box-shadow: 0 0 0 2px #0002;
+}
+
+.color-dot:hover,
+.color-dot.active {
+  border: 2px solid #222;
+  box-shadow: 0 0 8px 2px #0003;
+}
+
+/* ------------------------------
+   Navbar
+------------------------------ */
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   Zoom nas imagens
+------------------------------ */
+.zoomable {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.zoomable:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------
+   Carrossel
+------------------------------ */
+.carousel-inner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* ------------------------------
+   Cards
+------------------------------ */
+.card {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.card-img-wrapper {
+  height: var(--card-height);
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card-img-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.btn-outline-light {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* ------------------------------
+   Modais
+------------------------------ */
+.modal-content {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.modal-body img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+footer {
+  background-color: #1c1c1c;
+  padding: 1rem 0;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 0.5rem;
+  transition: transform 0.2s;
+}
+
+footer a:hover {
+  transform: scale(1.2);
+}
+
+/* ------------------------------
+   Responsividade
+------------------------------ */
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .card-img-wrapper {
+    height: 150px;
+  }
+
+  .carousel-inner img {
+    height: 220px !important;
+  }
+
+  .iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+  }
+}
