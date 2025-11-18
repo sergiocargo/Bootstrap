@@ -1,101 +1,66 @@
-/* ------------------------------
-   Variáveis e fundo geral
------------------------------- */
 :root {
-  --bg: #121212;
   --card-height: 220px;
 }
 
+/* ================================
+      ESTILO GERAL
+=================================== */
 body {
-  background-color: var(--bg);
+  background-color: #121212;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s;
 }
 
-/* ------------------------------
-   Bolinhas de troca de cor
------------------------------- */
+/* ================================
+      BOLINHAS DE CORES
+=================================== */
 .color-dot {
   width: 22px;
   height: 22px;
   border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
   border: 2px solid #fff;
-  cursor: pointer;
-  transition: box-shadow 0.2s, border 0.2s;
-  box-shadow: 0 0 0 2px #0002;
+  margin-left: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.color-dot:hover,
+.color-dot:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
 .color-dot.active {
-  border: 2px solid #222;
-  box-shadow: 0 0 8px 2px #0003;
+  transform: scale(1.25);
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
 }
 
-/* ------------------------------
-   Navbar
------------------------------- */
-.navbar {
-  padding: 0.5rem 1rem;
-}
-
-.navbar-nav .nav-link {
-  color: #fff;
-  margin: 0 0.5rem;
-}
-
-.navbar-nav .nav-link.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* ------------------------------
-   Zoom nas imagens
------------------------------- */
-.zoomable {
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.zoomable:hover {
-  transform: scale(1.05);
-}
-
-/* ------------------------------
-   Carrossel
------------------------------- */
-.carousel-inner img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1);
-}
-
-/* ------------------------------
-   Cards
------------------------------- */
+/* ================================
+      CARDS
+=================================== */
 .card {
   background-color: #1e1e1e;
   color: #fff;
   border: none;
   border-radius: 10px;
   overflow: hidden;
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card-img-wrapper {
-  height: var(--card-height);
+  width: 100%;
   overflow: hidden;
+  height: var(--card-height);
 }
 
 .card-img-wrapper img {
@@ -103,10 +68,15 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .card-img-wrapper img:hover {
   transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1rem;
 }
 
 .card-title {
@@ -120,57 +90,45 @@ body {
   padding: 0.25rem 0.5rem;
 }
 
-/* ------------------------------
-   Modais
------------------------------- */
-.modal-content {
-  background-color: #1e1e1e;
-  color: #fff;
+/* ================================
+      MODAL DE ZOOM — PADRÃO GLOBAL
+=================================== */
+#zoomModal .modal-dialog {
+  max-width: fit-content;
+  width: auto;
+  margin: auto;
 }
 
-.modal-body img {
-  width: 100%;
-  height: auto;
+#zoomModal .modal-content {
+  background: rgba(0,0,0,0.85);
+  padding: 0;
+  border: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+#zoomModal .modal-body {
+  padding: 0;
+}
+
+#zoomedImg {
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
   object-fit: contain;
+  margin: 0 auto;
 }
 
-/* ------------------------------
-   Footer
------------------------------- */
-footer {
-  background-color: #1c1c1c;
-  padding: 1rem 0;
+/* ================================
+      RESPONSIVIDADE
+=================================== */
+@media (max-width: 991px) {
+  .card-title {
+    font-size: 1rem;
+  }
 }
 
-footer a {
-  color: #fff;
-  margin: 0 0.5rem;
-  transition: transform 0.2s;
-}
-
-footer a:hover {
-  transform: scale(1.2);
-}
-
-/* ------------------------------
-   Responsividade
------------------------------- */
 @media (max-width: 767px) {
-  .navbar-nav {
-    text-align: center;
-  }
-
   .card-img-wrapper {
-    height: 150px;
-  }
-
-  .carousel-inner img {
-    height: 220px !important;
-  }
-
-  .iframe {
-    width: 100%;
-    height: 250px;
-    border: 0;
+    height: 180px;
   }
 }
